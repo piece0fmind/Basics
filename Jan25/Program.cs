@@ -18,7 +18,7 @@ int sum = Functions.AddInputAndReturn(a, b);
 Console.WriteLine($"The sum of {a} and {b} is {sum}");
 
 
-void AddInputNumbers(int a, int b) // takes parameters but doesn't return
+/*void AddInputNumbers(int a, int b) // takes parameters but doesn't return
 {
     int sum = a + b;
     Console.WriteLine($"The sum of {a} and {b} is {sum}");
@@ -42,5 +42,5 @@ int AddInputAndReturn(int a, int b) // takes parameters and returns
 {
     int sum = a + b;
     return sum;
-}
+}*/
 
