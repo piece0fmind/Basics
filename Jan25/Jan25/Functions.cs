@@ -8,6 +8,7 @@ namespace Jan25
 {
     public class Functions
     {
+
         public static void AddInputNumbers(int a, int b) // takes parameters but doesn't return
         {
             int sum = a + b;
