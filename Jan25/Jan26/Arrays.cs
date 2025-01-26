@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,18 @@ namespace BasicExamples.Jan26
                 Console.WriteLine($"Array member at index {i} = {array[i]}");
                 //array[6] = i; // This will give error because that array can hold only 5 numbers.
             }
+            Console.WriteLine("Counting length of the array");
+            int length = CalculateLength(array);
+            Console.WriteLine($"The length of the array is {length}");
+        }
+        public static int CalculateLength(int[] array)
+        {
+            int count = 0;
+            foreach(int i in array)
+            {
+                count++;
+            }
+            return count;
         }
     }
 }
