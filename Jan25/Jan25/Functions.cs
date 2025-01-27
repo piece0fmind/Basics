@@ -24,10 +24,10 @@ namespace Jan25
 
         public static int AddAndReturn() // doesn't take parameters but returns
         {
-            int a = 10;
-            int b = 20;
-            int sum = a + b;
-            return sum;
+            int a = 100;
+            int b = 200;
+            int sums = a + b;
+            return sums;
         }
         public static int AddInputAndReturn(int a, int b) // takes parameters and returns 
         {

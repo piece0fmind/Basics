@@ -2,7 +2,7 @@
 using BasicExamples.Jan26;
 using Jan25;
 
-//ExecuteJan25();
+ExecuteJan25();
 ExecuteJan26();
 
 void ExecuteJan25()
