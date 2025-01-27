@@ -21,11 +21,27 @@ namespace BasicExamples.Jan26
         public static int CalculateLength(int[] array)
         {
             int count = 0;
-            foreach(int i in array)
+            /*for (int i = 0; i < 5; i++) // we can do this using both of these loops
+            {
+                count++;
+            }*/
+            foreach (int i in array)
             {
                 count++;
             }
             return count;
+        }
+
+        public static int FindMax(int[] array)
+        {   int max = array[0]; //assume the first number is the max
+            for(int i = 0;i < 5; i++)
+            {
+                if (array[i] > max)
+                {
+                    max = array[i]; // if array[i] is greater than max then assign max = array[i];
+                }
+            }
+            return max;
         }
     }
 }
