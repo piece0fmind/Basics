@@ -26,6 +26,21 @@ void ExecuteJan25()
 void ExecuteJan26()
 {
     Console.WriteLine("Print an array");
-    Arrays.Print();
+    int[] array = new int[5]; // length of array is necessary while creating
+    Console.WriteLine("Enter 5 numbers:");
+    for (int i = 0; i < 5; i++)
+    {
+        int number = Convert.ToInt32(Console.ReadLine());
+        array[i] = number;
+    }
+    Arrays.Print(array);
+
+    Console.WriteLine("Counting length of the array");
+    int length = Arrays.CalculateLength(array);
+    Console.WriteLine($"The length of the array is {length}");
+
+    Console.WriteLine("Finding the max number in the array");
+    int max = Arrays.FindMax(array);
+    Console.WriteLine($"The max number in the array is {max}");
 }
 
