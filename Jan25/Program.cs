@@ -1,9 +1,12 @@
 ﻿
+using BasicExamples.Feb9;
 using BasicExamples.Jan26;
 using Jan25;
+using System.Runtime.CompilerServices;
 
 //ExecuteJan25();
-ExecuteJan26();
+//ExecuteJan26();
+ExecuteFeb9();
 
 void ExecuteJan25()
 {
@@ -42,5 +45,80 @@ void ExecuteJan26()
     Console.WriteLine("Finding the max number in the array");
     int max = Arrays.FindMax(array);
     Console.WriteLine($"The max number in the array is {max}");
+}
+
+void ExecuteFeb9()
+{
+    // Simple CRUD application with plain C# classes and list as data store.
+    DataStore dataStore = new DataStore();
+    
+    while (true)
+    {
+        Console.WriteLine("\nChoose an option below:");
+        Console.WriteLine("C - Create a new employee");
+        Console.WriteLine("R - View employee by code");
+        Console.WriteLine("U - Update an employee");
+        Console.WriteLine("D - Delete an employee");
+        Console.WriteLine("V - View all employees");
+        Console.WriteLine("X - Exit");
+        Console.Write("Your choice: ");
+        char option = char.ToUpper(Console.ReadKey().KeyChar);
+        Console.WriteLine();
+
+        switch (option)
+        {
+            case 'C':
+                Employee newEmployee = UserInputHelper.GetEmployeeDetails();
+                dataStore.Add(newEmployee);
+                break;
+
+            case 'R':
+                Console.Write("Enter Employee Code to view: ");
+                int code = Convert.ToInt32(Console.ReadLine());
+                Employee emp = dataStore.Get(code);
+              
+                Console.WriteLine($"Code: {emp.EmployeeCode}, Name: {emp.FirstName} {emp.LastName}, DOB: {emp.DateOfBirth:yyyy-MM-dd}");
+                
+                break;
+
+            case 'U':
+                Console.Write("Enter Employee Code to update: ");
+                int updateCode = Convert.ToInt32(Console.ReadLine());
+                Employee existingEmp = dataStore.Get(updateCode);
+                
+                Employee updatedEmp = new Employee();
+                updatedEmp.EmployeeCode = updateCode;
+
+                Console.Write("New First Name: ");
+                updatedEmp.FirstName = Console.ReadLine();
+
+                Console.Write("New Last Name: ");
+                updatedEmp.LastName = Console.ReadLine();
+
+                Console.Write("New Date Of Birth (yyyy-MM-dd): ");
+               
+                dataStore.Update(updateCode, updatedEmp);
+                break;
+
+            case 'D':
+                Console.Write("Enter Employee Code to delete: ");
+                int deleteCode = Convert.ToInt32(Console.ReadLine());
+                dataStore.Delete(deleteCode);
+                break;
+
+            case 'V':
+                Console.WriteLine("Employee List:");
+                dataStore.ViewAll();
+                break;
+
+            case 'X':
+                Console.WriteLine("Exiting program...");
+                return;
+
+            default:
+                Console.WriteLine("Invalid option, please try again.");
+                break;
+        }
+    }
 }
 
