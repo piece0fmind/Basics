@@ -1,7 +1,8 @@
 ﻿
+using ADO;
 using ADO.CRUD;
 
-string connectionString = "User ID=postgres;Password=root;Host=localhost;Port=5432;Database=console-db;";
+string connectionString = DbConfig.ConnectionString;
 
 CrudOperator crud = new(connectionString);
 
