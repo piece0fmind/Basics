@@ -27,8 +27,8 @@ namespace ADO.CRUD
                                 values (@firstName, @lastName, @dateOfBirth, @employeeCode);";
                 using (var command = new NpgsqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@firstName", employee.FirstName);
-                    command.Parameters.AddWithValue("@lastName", employee.LastName);
+                    command.Parameters.AddWithValue("@firstName", employee.FirstName.Trim());
+                    command.Parameters.AddWithValue("@lastName", employee.LastName.Trim());
                     command.Parameters.AddWithValue("@dateOfBirth", employee.DateOfBirth);
                     command.Parameters.AddWithValue("@employeeCode", newEmployeeCode);
                     command.ExecuteNonQuery();
