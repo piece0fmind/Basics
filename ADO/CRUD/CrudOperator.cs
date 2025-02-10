@@ -14,7 +14,7 @@ namespace ADO.CRUD
         public CrudOperator(string connectionString)
         {
             _connectionString = connectionString;
-        }//= "User ID=postgres;Password=root;Host=localhost;Port=5432;Database=console-db;";
+        }
         public void Insert(Employee employee)
         {
             using (var connection = new NpgsqlConnection(_connectionString))

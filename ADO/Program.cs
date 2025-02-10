@@ -11,6 +11,16 @@ ViewAllEmployees();
 void CreateNewEmployee()
 {
     Employee employee = new Employee();
+    TakeInput(employee);
+    crud.Insert(employee);
+}
+void ViewAllEmployees()
+{
+    
+    crud.ViewAll();
+}
+void TakeInput(Employee employee)
+{
     Console.WriteLine("Enter employee details below.");
     Console.Write("First Name: ");
     employee.FirstName = Console.ReadLine();
@@ -18,10 +28,4 @@ void CreateNewEmployee()
     employee.LastName = Console.ReadLine();
     Console.Write("Birth Date: ");
     employee.DateOfBirth = DateTime.Parse(Console.ReadLine());
-    crud.Insert(employee);
-}
-void ViewAllEmployees()
-{
-    
-    crud.ViewAll();
 }
