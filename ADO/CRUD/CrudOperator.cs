@@ -19,7 +19,6 @@ namespace ADO.CRUD
         {
             using (var connection = new NpgsqlConnection(_connectionString))
             {
-
                 connection.Open();
                 var newEmployeeCode = GetMaxEmployeeCode(connection);
 
@@ -38,8 +37,38 @@ namespace ADO.CRUD
         }
         public void Update(int id, Employee employee)
         {
+            using (var connection = new NpgsqlConnection(_connectionString))
+            {
+                connection.Open();
 
+                string query = @"UPDATE Employee 
+                         SET FirstName = @firstName, 
+                             LastName = @lastName, 
+                             DateOfBirth = @dateOfBirth, 
+                             EmployeeCode = @employeeCode 
+                         WHERE EmployeeId = @id;"; 
+
+                using (var command = new NpgsqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@firstName", employee.FirstName.Trim());
+                    command.Parameters.AddWithValue("@lastName", employee.LastName.Trim());
+                    command.Parameters.AddWithValue("@dateOfBirth", employee.DateOfBirth);
+                    command.Parameters.AddWithValue("@employeeCode", employee.EmployeeCode); 
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        Console.WriteLine("Employee updated successfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("No employee found with the given ID.");
+                    }
+                }
+            }
         }
+
         public void GetById(int id)
         {
 
