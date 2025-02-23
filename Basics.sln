@@ -5,7 +5,9 @@ VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicExamples", "Jan25\BasicExamples.csproj", "{2EB985A1-7595-4BFC-9645-3CED378A22E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO", "ADO\ADO.csproj", "{C34CD918-5916-44F1-AD24-0EEB97E72E15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADO", "ADO\ADO.csproj", "{C34CD918-5916-44F1-AD24-0EEB97E72E15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFConsole", "EFConsole\EFConsole.csproj", "{B4CAE226-79AD-45CA-B928-A06E6FF31667}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C34CD918-5916-44F1-AD24-0EEB97E72E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C34CD918-5916-44F1-AD24-0EEB97E72E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C34CD918-5916-44F1-AD24-0EEB97E72E15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4CAE226-79AD-45CA-B928-A06E6FF31667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4CAE226-79AD-45CA-B928-A06E6FF31667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4CAE226-79AD-45CA-B928-A06E6FF31667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4CAE226-79AD-45CA-B928-A06E6FF31667}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
