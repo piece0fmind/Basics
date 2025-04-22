@@ -1,1 +1,1 @@
- "This is a Git tutorial."
+ "Hey! This is a Git tutorial."
